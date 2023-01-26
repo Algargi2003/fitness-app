@@ -1,0 +1,10 @@
+.botones-3col{
+    display: grid;
+    grid-template-columns: repeat(3,1fr)
+}
+.boton{
+    border-color:  rgb(0, 9, 112);
+    background-color: rgb(0, 123, 255);
+    color: white;
+}
+
