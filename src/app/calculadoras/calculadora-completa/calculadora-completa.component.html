@@ -1,0 +1,86 @@
+<app-menu-calculadoras></app-menu-calculadoras>
+<!-- peso
+FactorActividad
+Si quiere subir o bajar de peso (if peso/altura>X) que reste o sume un diferente porcentaje -->
+<div class=" ms-3">
+  <div class=" mt-3">
+    Introduce tu peso
+    <input class="input " type="number" style="width: 25%;" [(ngModel)]="vPeso">
+  </div>
+  <div class=" mt-3">
+    Introduce tu Nivel de Actividad
+    <select [(ngModel)]="vFactorActividad" style="width: 60%;" required="true" class="input">
+      <option selected="selected" value="1'2">Poco o ningun ejercicio</option>
+      <option value="14">Ejercicio Ligero(1-3 dias/semana)</option>
+      <option value="16">Ejercicio Moderado(3-5 dias/semana)</option>
+      <option value="18">Ejercicio Fuerte(6-7 dias/semana)</option>
+      <option value="20">Ejercicio Muy Fuerte(Dobles sesiones todos los dias)</option>
+
+    </select>
+  </div>
+  <div class=" mt-4">
+    Introduce tu objetivo<br>
+    <select [(ngModel)]="vObjetivo" style=" width: 25%;" required="true" class="input">
+      <option value="perder">Perder peso</option>
+      <option value="ganar">Ganar peso</option>
+    </select>
+  </div><br>
+  <button (click)="calcular()">Calcular</button>
+  <p>{{caloriasConsumir}}</p>
+</div>
+
+<!--
+  PARA SABER LAS CALORIAS QUE CONSUMES ACTUALMENTE AL DÍA:
+  KG*22*FactorActividad
+  FactorActividad es:
+                    - 1'2: Poco o ningún ejercicio
+                    - 1'4: Ejercicio Ligero(1-3 dias/semana)
+                    - 1'6: Ejercicio Moderado(3-5 dias/semana)
+                    - 1'8: Ejercicio Fuerte(6-7 dias/semana)
+                    - 2 : Ejercicio Muy Fuerte(Dobles sesiones todos los dias)
+
+
+  PARA BAJAR DE PESO:
+    - Restar un 10% de las calorias que consumes al dia
+    - Restar un 20% de las calorias que consumes al dia
+    - Restar un 30% de las calorias que consumes al dia
+
+  PARA SUBIR DE PESO:
+    - Sumar un 10% de las calorias que consumes al dia
+    - Sumar un 15% de las calorias que consumes al dia
+    - Sumar un 20% de las calorias que consumes al dia
+
+
+
+
+  UNA VEZ HECHOS ESTOS CALCULOS TOCA DIVIDIR LAS CALORIAS QUE DEBES CONSUMIR AL DIA ENTRE
+  - PROTEINAS
+  - HIDRATOS DE CARBONO
+  - GRASAS
+
+  EQUIVALENCIAS DE LOS MACROS:
+  - 1 gr Proteina -> 4 kCal
+  - 1 gr Hidrato de carbono -> 4 kCal
+  - 1 gr Grasa -> 9 kCal
+
+
+  RECOMENDACIONES MACROS
+  - PROTEINAS
+  1'8-2'5 * kg totales
+  1'8-2'5 gr/KG peso-> Para perder peso/grasa: mantenerse en rango alto
+                    -> Para ganar peso/volumen: mantenerse rango medio/bajo
+  - GRASAS
+  0'5-1'5 gr/KG peso-> Para perder peso/grasa: mantenerse en rango bajo
+                    ->Para ganar peso/volumen: mantenerse rango medio/alto
+  - HIDRATOS DE CARBONO
+  El restante
+
+  CALCULO FINAL PARA LLEGAR A LAS CALORIAS:
+  - Gramos proteina a consumir * 4 = Kcal que consumen las proteinas
+  - Gramos grasa a consumir * 9 = Kcal que consumen las grasas
+
+  - Total kcals a consumir - ( kcal prot + kcal grasas)= kcal de carboHidratos
+    Total kcal de hidratos de carbono : 4 = gramos de hidratos de carbono a consumir
+
+
+ -->

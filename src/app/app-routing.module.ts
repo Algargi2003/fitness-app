@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BodyComponent } from './body/body.component';
+import { CalculadoraCompletaComponent } from './calculadoras/calculadora-completa/calculadora-completa.component';
 import { CaloriasComponent } from './calculadoras/calorias/calorias.component';
 import { ProteinasComponent } from './calculadoras/proteinas/proteinas.component';
 import { CalculadoraReglaTresComponent } from './calculadoras/reglaTres/calculadora-regla-tres.component';
@@ -11,7 +12,8 @@ const routes: Routes = [
   {path:"calculadoras",component:MenuCalculadorasComponent},
   {path:"calculadoras/calorias",component:CaloriasComponent},
   {path:"calculadoras/proteinas",component:ProteinasComponent},
-  {path:"calculadoras/reglatres",component:CalculadoraReglaTresComponent}
+  {path:"calculadoras/reglatres",component:CalculadoraReglaTresComponent},
+  {path:"calculadoras/completa", component:CalculadoraCompletaComponent}
 ];
 
 @NgModule({

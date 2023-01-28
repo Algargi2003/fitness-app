@@ -9,6 +9,8 @@ import { MenuCalculadorasComponent } from './menu-calculadoras/menu-calculadoras
 import { CaloriasComponent } from './calculadoras/calorias/calorias.component';
 import { ProteinasComponent } from './calculadoras/proteinas/proteinas.component';
 import { CalculadoraReglaTresComponent } from './calculadoras/reglaTres/calculadora-regla-tres.component';
+import { CalculadoraCompletaComponent } from './calculadoras/calculadora-completa/calculadora-completa.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import { CalculadoraReglaTresComponent } from './calculadoras/reglaTres/calculad
     MenuCalculadorasComponent,
     CaloriasComponent,
     ProteinasComponent,
-    CalculadoraReglaTresComponent
+    CalculadoraReglaTresComponent,
+    CalculadoraCompletaComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
