@@ -1,6 +1,6 @@
-.botones-3col{
+.botones-4col{
     display: grid;
-    grid-template-columns: repeat(3,1fr)
+    grid-template-columns: repeat(4,1fr)
 }
 .boton{
     border-color:  rgb(0, 9, 112);

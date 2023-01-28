@@ -18,7 +18,7 @@ import { CalculadoraReglaTresComponent } from './calculadoras/reglaTres/calculad
     MenuCalculadorasComponent,
     CaloriasComponent,
     ProteinasComponent,
-    CalculadoraReglaTresComponent,
+    CalculadoraReglaTresComponent
   ],
   imports: [
     BrowserModule,
