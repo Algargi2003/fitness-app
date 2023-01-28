@@ -14,6 +14,7 @@ export class CalculadoraCompletaComponent {
 
   }
   calcular(){
+    this.caloriasConsumir=0;
     this.caloriasConsumir=this.vPeso*22*(this.vFactorActividad/10);
     console.log(this.caloriasConsumir)
   }
