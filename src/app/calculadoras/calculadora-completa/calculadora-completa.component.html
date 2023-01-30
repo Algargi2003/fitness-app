@@ -26,7 +26,38 @@ Si quiere subir o bajar de peso (if peso/altura>X) que reste o sume un diferente
     </select>
   </div><br>
   <button (click)="calcular()">Calcular</button>
-  <p>{{verCalorias}}</p>
+  <!-- RESULTADOS -->
+  <table class=" table table-bordered">
+    <tr>
+      <td></td>
+      <td class="negrita">Gramos</td>
+      <td class="negrita">Calorias</td>
+    </tr>
+    <tr>
+      <td class="negrita">Proteinas</td>
+      <td>{{proteinasRecomendadas}}gr</td>
+      <td>{{proteinasCal}} cal</td>
+    </tr>
+    <tr>
+      <td class="negrita">Grasas</td>
+      <td>{{grasasRecomendadas}}gr</td>
+      <td>{{grasasCal}} cal</td>
+    </tr>
+    <tr>
+      <td class="negrita">Carbohidratos</td>
+      <td>{{hidratosRecomendados}}gr</td>
+      <td>{{hidratosCal}} cal</td>
+    </tr>
+    <tr>
+      <td class="negrita">Total</td>
+      <td class="negrita">{{proteinasRecomendadas+grasasRecomendadas+hidratosRecomendados}}gr</td>
+      <td class="negrita">{{caloriasConsumir}} cal</td>
+    </tr>
+  </table>
+  <!-- <p>Calorias = {{caloriasConsumir}} cals</p>
+  <p>Proteinas = {{proteinasRecomendadas}}gr</p>
+  <p>Grasas = {{grasasRecomendadas}}gr</p>
+  <p>Hidratos = {{hidratosRecomendados}}gr</p> -->
 </div>
 
 <!--
