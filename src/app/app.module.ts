@@ -14,6 +14,10 @@ import { FormsModule } from '@angular/forms';
 import { MenuDiasRutinaComponent } from './rutina/menu-dias-rutina/menu-dias-rutina.component';
 import { RutinaLunesComponent } from './rutina/dias/rutina-lunes/rutina-lunes.component';
 import { RutinaMartesComponent } from './rutina/dias/rutina-martes/rutina-martes.component';
+import { RutinaMiercolesComponent } from './rutina/dias/rutina-miercoles/rutina-miercoles.component';
+import { RutinaJuevesComponent } from './rutina/dias/rutina-jueves/rutina-jueves.component';
+import { RutinaViernesComponent } from './rutina/dias/rutina-viernes/rutina-viernes.component';
+import { RutinaSabadoComponent } from './rutina/dias/rutina-sabado/rutina-sabado.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import { RutinaMartesComponent } from './rutina/dias/rutina-martes/rutina-martes
     CalculadoraCompletaComponent,
     MenuDiasRutinaComponent,
     RutinaLunesComponent,
-    RutinaMartesComponent
+    RutinaMartesComponent,
+    RutinaMiercolesComponent,
+    RutinaJuevesComponent,
+    RutinaViernesComponent,
+    RutinaSabadoComponent
   ],
   imports: [
     BrowserModule,
