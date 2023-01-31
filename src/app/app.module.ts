@@ -18,6 +18,7 @@ import { RutinaMiercolesComponent } from './rutina/dias/rutina-miercoles/rutina-
 import { RutinaJuevesComponent } from './rutina/dias/rutina-jueves/rutina-jueves.component';
 import { RutinaViernesComponent } from './rutina/dias/rutina-viernes/rutina-viernes.component';
 import { RutinaSabadoComponent } from './rutina/dias/rutina-sabado/rutina-sabado.component';
+import { ListaProductosComponent } from './lista-productos/lista-productos.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { RutinaSabadoComponent } from './rutina/dias/rutina-sabado/rutina-sabado
     RutinaMiercolesComponent,
     RutinaJuevesComponent,
     RutinaViernesComponent,
-    RutinaSabadoComponent
+    RutinaSabadoComponent,
+    ListaProductosComponent
   ],
   imports: [
     BrowserModule,
