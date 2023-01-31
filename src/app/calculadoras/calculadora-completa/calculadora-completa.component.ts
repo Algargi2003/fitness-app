@@ -38,6 +38,7 @@ export class CalculadoraCompletaComponent {
     if (this.vPeso==null||this.vFactorActividad==null||this.vObjetivo=="") {
       alert('Introduce todos los campos');
     } else {
+      localStorage.clear();
       this.caloriasConsumir = this.vPeso * 22 * (this.vFactorActividad / 10);
       if (this.vObjetivo == 'ganar') {
         //Calorias
@@ -68,11 +69,16 @@ export class CalculadoraCompletaComponent {
       localStorage.setItem('cal', guardarCal);
       //Proteinas
       localStorage.setItem('prot', guardarProt);
+      this.proteinasCal = this.proteinasRecomendadas*4;
       //Grasas
       localStorage.setItem('grasas',guardarGrasas);
+      this.grasasCal = this.grasasRecomendadas*9;
       //Hidratos
+
       this.hidratosCal = Math.round(this.caloriasConsumir-(this.proteinasCal+this.grasasCal));
       this.hidratosRecomendados = Math.round(this.hidratosCal/4);
+
+
       guardarHidratos = this.hidratosRecomendados.toString();
       localStorage.setItem('hidratos',guardarHidratos);
       console.log(this.caloriasConsumir-(this.proteinasCal+this.grasasCal+this.hidratosCal))
