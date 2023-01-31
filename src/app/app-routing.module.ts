@@ -6,6 +6,7 @@ import { CaloriasComponent } from './calculadoras/calorias/calorias.component';
 import { ProteinasComponent } from './calculadoras/proteinas/proteinas.component';
 import { CalculadoraReglaTresComponent } from './calculadoras/reglaTres/calculadora-regla-tres.component';
 import { MenuCalculadorasComponent } from './menu-calculadoras/menu-calculadoras.component';
+import { MenuDiasRutinaComponent } from './rutina/menu-dias-rutina/menu-dias-rutina.component';
 
 const routes: Routes = [
   {path:"",component:BodyComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path:"calculadoras/calorias",component:CaloriasComponent},
   {path:"calculadoras/proteinas",component:ProteinasComponent},
   {path:"calculadoras/reglatres",component:CalculadoraReglaTresComponent},
-  {path:"calculadoras/completa", component:CalculadoraCompletaComponent}
+  {path:"calculadoras/completa", component:CalculadoraCompletaComponent},
+  {path:"rutinas",component:MenuDiasRutinaComponent}
 ];
 
 @NgModule({

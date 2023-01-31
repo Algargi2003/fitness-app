@@ -11,6 +11,9 @@ import { ProteinasComponent } from './calculadoras/proteinas/proteinas.component
 import { CalculadoraReglaTresComponent } from './calculadoras/reglaTres/calculadora-regla-tres.component';
 import { CalculadoraCompletaComponent } from './calculadoras/calculadora-completa/calculadora-completa.component';
 import { FormsModule } from '@angular/forms';
+import { MenuDiasRutinaComponent } from './rutina/menu-dias-rutina/menu-dias-rutina.component';
+import { RutinaLunesComponent } from './rutina/dias/rutina-lunes/rutina-lunes.component';
+import { RutinaMartesComponent } from './rutina/dias/rutina-martes/rutina-martes.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { FormsModule } from '@angular/forms';
     CaloriasComponent,
     ProteinasComponent,
     CalculadoraReglaTresComponent,
-    CalculadoraCompletaComponent
+    CalculadoraCompletaComponent,
+    MenuDiasRutinaComponent,
+    RutinaLunesComponent,
+    RutinaMartesComponent
   ],
   imports: [
     BrowserModule,
