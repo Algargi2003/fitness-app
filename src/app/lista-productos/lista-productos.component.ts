@@ -26,23 +26,73 @@ export class ListaProductosComponent {
     }
 
   ];
+  vNuevoProducto!:string;
   arrayProductos!:Array<Producto>;
 
   ngOnInit(){
-
-  }
-  guardar(){
-    localStorage.setItem("lista",JSON.stringify(this.listado))
-    let arr = localStorage.getItem("lista");
-
-    if(arr!=null){
-      this.arrayProductos = JSON.parse(arr);
+    let list = localStorage.getItem("lista");
+    if(list!=null){
+      this.arrayProductos = JSON.parse(list);
     }
-    console.log(this.arrayProductos)
+
   }
+  // guardar(){
+  //   localStorage.setItem("lista",JSON.stringify(this.listado))
+  //   let arr = localStorage.getItem("lista");
+
+  //   if(arr!=null){
+  //     this.arrayProductos = JSON.parse(arr);
+  //   }
+  //   console.log(this.arrayProductos)
+  // }
   sumarProducto(id:number){
     let pos = this.arrayProductos.findIndex(pr => pr.id==id);
     this.arrayProductos[pos].cantidad++;
     localStorage.setItem("lista",JSON.stringify(this.arrayProductos))
   }
+  restarProducto(id:number){
+    let pos = this.arrayProductos.findIndex(pr => pr.id==id);
+    if(this.arrayProductos[pos].cantidad>0){
+      this.arrayProductos[pos].cantidad--;
+      localStorage.setItem("lista",JSON.stringify(this.arrayProductos))
+    }
+
+  }
+  verModal(){
+    let modal:any = <any>document.getElementById("dialogoAnyadir");
+    modal.showModal();
+    let btnCancelar = document.getElementById("cancelar");
+    btnCancelar?.addEventListener("click", function(){
+      modal.close();
+    })
+  }
+  anyadirProducto(){
+    let cond = true;
+    this.arrayProductos.forEach(e =>{
+      if(e.nombre.toLowerCase()==this.vNuevoProducto.toLowerCase()){
+        cond=false;
+      }
+    });
+    if(cond=true){
+      let pr:Producto= {
+        id: this.arrayProductos.length+1,
+        nombre: this.vNuevoProducto,
+        cantidad: 0
+      }
+      this.arrayProductos.push(pr);
+      localStorage.setItem("lista",JSON.stringify(this.arrayProductos));
+      let modal:any = <any>document.getElementById("dialogoAnyadir");
+      modal.close();
+    }else{
+      alert("Ya existe el producto");
+    }
+
+  }
+  borrarProducto(id:number){
+    let pos = this.arrayProductos.findIndex(pr => pr.id==id);
+    this.arrayProductos.splice(pos,1)
+    localStorage.setItem("lista",JSON.stringify(this.arrayProductos))
+  }
 }
+
+

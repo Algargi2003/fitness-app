@@ -1,10 +1,11 @@
-<button (click)="guardar()">Guardar</button>
+<!-- <button (click)="guardar()">Guardar</button> -->
 <table class="table table-striped ">
   <thead>
     <tr>
       <th scope="col">Id</th>
       <th scope="col">Nombre</th>
       <th scope="col">Cantidad</th>
+      <th scope="col"><button (click)="verModal()" class="btn btn-info">Añadir</button></th>
     </tr>
   </thead>
   <tbody>
@@ -13,14 +14,28 @@
       <td>{{p.nombre}}</td>
       <td>{{p.cantidad}}</td>
       <td>
-        <button (click)="sumarProducto(p.id)">+</button>
-        <button>-</button>
+        <button (click)="sumarProducto(p.id)" class="btn btn-success">+</button>
+        <button (click)="restarProducto(p.id)" class="btn btn-secondary">-</button>
+        <button (click)="borrarProducto(p.id)" class="btn btn-danger">Borrar</button>
       </td>
     </tr>
   </tbody>
 
 
 </table>
+<dialog id="dialogoAnyadir">
+  <h1>Añadir producto</h1>
+  <div class=" d-flex flex-column">
+
+    <div class=" mb-3">Nombre<input class=" ms-1 input" [(ngModel)]="vNuevoProducto"></div>
+    <div class=" w-100">
+      <button class=" w-50 btn btn-danger" id="cancelar">Cancelar</button>
+      <button class=" w-50 btn btn-primary" (click)="anyadirProducto()">Añadir</button>
+    </div>
+
+  </div>
+
+</dialog>
 
 
 
