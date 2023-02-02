@@ -67,13 +67,7 @@ export class ListaProductosComponent {
     })
   }
   anyadirProducto(){
-    let cond = true;
-    this.arrayProductos.forEach(e =>{
-      if(e.nombre.toLowerCase()==this.vNuevoProducto.toLowerCase()){
-        cond=false;
-      }
-    });
-    if(cond=true){
+
       let pr:Producto= {
         id: this.arrayProductos.length+1,
         nombre: this.vNuevoProducto,
@@ -83,9 +77,7 @@ export class ListaProductosComponent {
       localStorage.setItem("lista",JSON.stringify(this.arrayProductos));
       let modal:any = <any>document.getElementById("dialogoAnyadir");
       modal.close();
-    }else{
-      alert("Ya existe el producto");
-    }
+
 
   }
   borrarProducto(id:number){
